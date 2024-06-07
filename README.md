@@ -5,8 +5,8 @@ This repository will contain the official source code and data for our paper:
 > [Chunghyun Park<sup>1*<sup>](https://chrockey.github.io/),
 > [Seungwook Kim<sup>1*<sup>](https://wookiekim.github.io/),
 > [Jaesik Park<sup>2<sup>](http://jaesik.info/), and
-> [Minsu Cho<sup>1<sup>](http://cvlab.postech.ac.kr/~mcho/) (*equal contribution)<be>
-> <sup>1<sup>POSTECH & <sup>2<sup>Seoul National University<br>
+> [Minsu Cho<sup>1<sup>](http://cvlab.postech.ac.kr/~mcho/) (*equal contribution)
+> <sup>1<sup>POSTECH & <sup>2<sup>Seoul National University
 > CVPR, Seattle, 2024.
 
 The code and data will be uploaded soon.
