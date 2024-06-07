@@ -6,7 +6,7 @@ This repository will contain the official source code and data for our paper:
 > [Seungwook Kim<sup>1*<sup>](https://wookiekim.github.io/),
 > [Jaesik Park<sup>2<sup>](http://jaesik.info/), and
 > [Minsu Cho<sup>1<sup>](http://cvlab.postech.ac.kr/~mcho/) (*equal contribution)
-> <sup>1<sup>POSTECH & <sup>2<sup>Seoul National University
+> <sup>1<sup>POSTECH & <sup>2<sup>Seoul National University<br>
 > CVPR, Seattle, 2024.
 
 The code and data will be uploaded soon.
