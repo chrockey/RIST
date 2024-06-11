@@ -139,13 +139,13 @@
 <!-- Overview of Proposed Method -->
 <section class="hero is-small">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">RIST: 3D Rotation-Invariant Local Shape Transform</h2>
-      <div class="column is-centered">
-        <figure class="image">
-          <img src="static/images/overview_cvpr_v3.png" alt="Overview of Proposed Method">
-        </figure>
-        <figcaption class="has-text-justified">The input point clouds are independently encoded to SO(3)-equivariant global shape descriptor and dynamic SO(3)-invariant point-wise local shape transforms. The local shape transforms map the global shape descriptor to local shape descriptors by infusing local semantics and geometry, which are used as inputs to the decoder for selfreconstruction. For cross-reconstruction, we apply the local shape transforms formulated from another point cloud to reconstruct the point cloud, ensuring that the local shape descriptors successfully capture generalizable local semantics and geometries. We supervise RIST via penalizing errors in self- and cross-reconstructions. At inference, we can leverage the local shape transforms for obtaining local shape descriptors, to identify the dense correspondences.</figcaption>
-      </div>
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">RIST: 3D Rotation-Invariant Local Shape Transform</h2>
+          <figure class="image">
+            <img src="static/images/overview_cvpr_v3.png" alt="Overview of Proposed Method">
+          </figure>
+          <figcaption class="has-text-justified">The input point clouds are independently encoded to SO(3)-equivariant global shape descriptor and dynamic SO(3)-invariant point-wise local shape transforms. The local shape transforms map the global shape descriptor to local shape descriptors by infusing local semantics and geometry, which are used as inputs to the decoder for selfreconstruction. For cross-reconstruction, we apply the local shape transforms formulated from another point cloud to reconstruct the point cloud, ensuring that the local shape descriptors successfully capture generalizable local semantics and geometries. We supervise RIST via penalizing errors in self- and cross-reconstructions. At inference, we can leverage the local shape transforms for obtaining local shape descriptors, to identify the dense correspondences.</figcaption>
+    </div>
   </div>
 </section>
 <!-- End overview of proposed method -->
