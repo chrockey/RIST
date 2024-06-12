@@ -11,7 +11,7 @@ This repository will contain the official source code and data for our paper:
 
 <div align="left">
   <a href="https://arxiv.org/abs/2404.11156"><img src="https://img.shields.io/badge/arXiv-2203.15712-b31b1b.svg"/></a>
-  <a href="http://cvlab.postech.ac.kr/research/RIST"><img src="https://img.shields.io/static/v1?label=project page&message=RIST&color=9cf"/></a>
+  <a href="https://chrockey.github.io/RIST/"><img src="https://img.shields.io/static/v1?label=project page&message=RIST&color=9cf"/></a>
 </div>
 
 The code and data will be uploaded soon.
