@@ -1,0 +1,44 @@
+# @package _global_
+
+defaults:
+  - data: keypointnet
+  - model: rist
+  - optim: adamw
+  - scheduler: onecyclelr
+  - callbacks: default
+  - logger: wandb
+  - trainer: ddp
+  - paths: default
+  - experiment: null
+  - override hydra/job_logging: none
+  - _self_
+
+# Experiment name (used for output directory and wandb run name)
+# Default: {data.name}_{data.category} (can override with run_name=my_name)
+# Optional postfix: run_name_postfix=v2 -> {data.name}_{data.category}-v2
+run_name_postfix: null
+run_name: ${data.name}_${data.category}
+
+# Resume from existing experiment directory
+# Set to experiment directory path (e.g., results/my_experiment) to resume
+resume: null
+
+# Task settings
+task_name: "train"
+train: true
+test: true
+ckpt_path: null
+
+# Reproducibility
+seed: 1
+
+# Tags for experiment tracking
+tags:
+  - ${data.name}
+  - ${data.category}
+
+# Disable Hydra output (wandb handles logging)
+hydra:
+  output_subdir: null
+  run:
+    dir: .

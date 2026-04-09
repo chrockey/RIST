@@ -1,0 +1,21 @@
+*.pyc
+*.pth
+*.png
+!assets/*.png
+*.zip
+*.egg-info/
+*.so
+build/
+
+results/
+main_branch/
+/data/
+!src/data/
+!configs/data/
+docs/
+wandb/
+docker/.env.registry
+kubeflow/wandb-secret-chunghyun.yaml
+
+# Training logs
+*.log

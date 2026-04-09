@@ -1,0 +1,7 @@
+# @package model
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 1e-3
+  betas: [0.9, 0.999]
+  weight_decay: 0.1

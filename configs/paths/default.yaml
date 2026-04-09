@@ -1,0 +1,13 @@
+# @package paths
+# Default paths configuration
+root_dir: ${oc.env:PROJECT_ROOT,${hydra:runtime.cwd}}
+
+data_dir: ${paths.root_dir}/data
+results_dir: ${paths.root_dir}/results
+
+# Experiment-specific paths (set by train.py based on run_name)
+experiment_dir: ${paths.results_dir}/${run_name}
+checkpoint_dir: ${paths.experiment_dir}/checkpoints
+wandb_dir: ${paths.experiment_dir}/wandb
+
+work_dir: ${hydra:runtime.cwd}

@@ -1,0 +1,7 @@
+# @package model
+# AdamW optimizer configuration
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.004
+  weight_decay: 1e-2

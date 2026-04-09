@@ -1,0 +1,22 @@
+# RIST model configuration
+_target_: src.models.lightning_modules.RISTModule
+
+# Encoder (theta_dim is divided by 3 internally for VN layers)
+encoder:
+  _target_: src.models.networks.encoder.VNEncoder
+  z_dim: 768
+  k: 30
+  theta_dim: 128
+  use_fpn: false      # Set false to disable feature pyramid (use only final stage)
+  dynamic_knn: true   # Set false to use static KNN based on input coordinates
+
+# Decoder
+decoder:
+  _target_: src.models.networks.decoder.ImplicitDecoder
+  theta_dim: ${model.encoder.theta_dim}
+
+# Training settings
+sr_epochs: 0  # 0 = joint training from start (SR + CR together)
+lambda_mse: 500.0
+lambda_emd: 2.0
+lambda_cd: 100.0

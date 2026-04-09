@@ -1,0 +1,24 @@
+# RIST model configuration with Simple Encoder
+_target_: src.models.lightning_modules.RISTModule
+
+# Simple Encoder (fewer layers, no feature pyramid)
+encoder:
+  _target_: src.models.networks.encoder.VNSimpleEncoder
+  z_dim: 512
+  k: 20
+  theta_dim: 256
+  base_ch: 64              # Base channel dimension
+  feature_transform: false  # Whether to use global feature transform
+  use_fpn: true            # Ignored by VNSimpleEncoder (for sweep compatibility)
+  dynamic_knn: true        # Ignored by VNSimpleEncoder (for sweep compatibility)
+
+# Decoder
+decoder:
+  _target_: src.models.networks.decoder.ImplicitDecoder
+  theta_dim: ${model.encoder.theta_dim}
+
+# Training settings
+sr_epochs: 0  # 0 = joint training from start (SR + CR together)
+lambda_mse: 1000.0
+lambda_emd: 1.0
+lambda_cd: 10.0

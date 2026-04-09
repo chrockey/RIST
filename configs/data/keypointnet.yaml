@@ -1,0 +1,21 @@
+# KeypointNet dataset configuration
+_target_: src.data.KeypointNetDataModule
+name: keypointnet
+
+keypointnet_dir: ${paths.data_dir}/KeypointNet
+category: airplane
+rotate: false
+batch_size: 16
+num_workers: 8
+pin_memory: true
+repeat: 100
+
+# Data augmentation options (default: no augmentation)
+flip: false
+flip_p: 0.5
+jitter: false
+jitter_sigma: 0.01
+jitter_clip: 0.05
+elastic: false
+elastic_params: null
+elastic_p: 0.95

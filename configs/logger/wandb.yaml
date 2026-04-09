@@ -1,0 +1,14 @@
+# Weights & Biases logger configuration
+wandb:
+  _target_: lightning.pytorch.loggers.WandbLogger
+  project: "RIST"
+  name: ${run_name}
+  save_dir: ${paths.wandb_dir}
+  offline: false
+  id: null  # Set by train.py when resuming
+  resume: null  # Set to "must" when resuming
+  anonymous: null
+  version: null
+  log_model: false
+  tags: ${tags}
+  group: null

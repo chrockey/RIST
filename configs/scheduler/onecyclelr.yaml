@@ -1,0 +1,9 @@
+# @package model
+# OneCycleLR scheduler configuration
+scheduler:
+  _target_: torch.optim.lr_scheduler.OneCycleLR
+  _partial_: true
+  max_lr: ${model.optimizer.lr}
+  pct_start: 0.01
+  anneal_strategy: "cos"
+scheduler_interval: "step"

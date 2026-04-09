@@ -1,0 +1,67 @@
+project: RIST
+program: src/train.py
+method: bayes
+metric:
+  name: test/auc
+  goal: maximize
+
+parameters:
+  # Model type selection (rist = VNEncoder, rist_simple = VNSimpleEncoder)
+  model:
+    values: [rist, rist_simple]
+
+  # Learning rate (log scale)
+  model.optimizer.lr:
+    distribution: log_uniform_values
+    min: 1e-4
+    max: 5e-3
+
+  # Scheduler: use OneCycleLR or no scheduler
+  scheduler:
+    values: [onecyclelr, none]
+
+  # Architecture: feature dimension
+  model.encoder.z_dim:
+    values: [256, 512, 768]
+
+  # Architecture: KNN neighbors
+  model.encoder.k:
+    values: [10, 20, 30]
+
+  # Architecture: theta dimension
+  model.encoder.theta_dim:
+    values: [128, 256, 384]
+
+  # Architecture ablations (VNEncoder only, ignored for rist_simple)
+  model.encoder.use_fpn:
+    values: [true, false]
+
+  model.encoder.dynamic_knn:
+    values: [true, false]
+
+  # Loss weights
+  model.lambda_cd:
+    values: [10.0, 50.0, 100.0]
+
+  model.lambda_mse:
+    values: [500.0, 1000.0, 2000.0]
+
+  model.lambda_emd:
+    values: [0.5, 1.0, 2.0]
+
+  # Training phase
+  model.sr_epochs:
+    values: [0, 5]
+
+  # Fixed: 25 epochs
+  trainer.max_epochs:
+    value: 25
+
+command:
+  - ${env}
+  - uv
+  - run
+  - python
+  - ${program}
+  - experiment=keypointnet
+  - ${args_no_hyphens}

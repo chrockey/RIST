@@ -1,0 +1,39 @@
+# @package _global_
+
+defaults:
+  - data: keypointnet
+  - model: rist
+  - optim: adamw
+  - callbacks: null
+  - logger: wandb
+  - trainer: default
+  - paths: default
+  - optional experiment: null
+  - _self_
+
+# Evaluation uses rotation by default
+data:
+  rotate: true
+
+# Run name for logging (matches train.yaml pattern)
+run_name: ${data.name}_${data.category}
+
+# Task settings
+task_name: "eval"
+train: false
+test: true
+ckpt_path: ???  # Required: path to checkpoint
+
+# Reproducibility
+seed: 1234
+
+# Tags for experiment tracking
+tags:
+  - ${data.category}
+  - evaluation
+
+# Disable Hydra output directory (eval logs to wandb only)
+hydra:
+  output_subdir: null
+  run:
+    dir: .

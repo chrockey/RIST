@@ -1,0 +1,20 @@
+# @package _global_
+
+# Experiment: KeypointNet airplane category
+# Run with: python src/train.py experiment=keypointnet
+
+defaults:
+  - override /data: keypointnet
+  - override /model: rist
+  - override /scheduler: none
+
+# Override data settings
+data:
+  category: airplane
+  rotate: false
+
+# Override trainer settings
+trainer:
+  devices: 1
+  max_epochs: 25
+  check_val_every_n_epoch: 1
